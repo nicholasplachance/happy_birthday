@@ -1,12 +1,14 @@
-import React from 'react';
-import './App.css';
-import sketch from './sketch';
-import p5 from 'p5';
+import "./App.css";
 
-const TEXT = 'Happy Birthday Trisha';
+import OpenMe from "./openMe/openMe.component";
+import React from "react";
+import p5 from "p5";
+import sketch from "./sketch";
 
-const App = () => {
-  const canvasRef = React.useRef(null)
+const TEXT = "Happy 25th B-Day Kim!";
+
+const HappyBirthDay = () => {
+  const canvasRef = React.useRef(null);
 
   React.useEffect(() => {
     const canvasDivElement = canvasRef.current;
@@ -14,13 +16,21 @@ const App = () => {
     // NOTE: If you change TEXT value to something else, you'll need to make changes in sketch.js as well to make it work
     // See my comments in sketch.js
     new p5(sketch(canvasDivElement, TEXT), canvasDivElement);
-  })
+  });
 
   return (
-    <div className="main">
-      <div ref={canvasRef} />
-    </div >
-  )
-}
+    <div className='main'>
+      <div className='canvas' ref={canvasRef} />
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className='main'>
+      <HappyBirthDay />
+    </div>
+  );
+};
 
 export default App;

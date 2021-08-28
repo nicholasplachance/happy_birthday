@@ -1,11 +1,11 @@
-import p5 from 'p5';
+import p5 from "p5";
 
 export default class Dot {
   constructor(x, y, sketch) {
     this.sketch = sketch;
     this.position = this.sketch.createVector(
       this.sketch.random(this.sketch.width),
-      this.sketch.random(this.sketch.height),
+      this.sketch.random(this.sketch.height)
     );
 
     this.target = this.sketch.createVector(x, y);
@@ -13,7 +13,7 @@ export default class Dot {
     this.acceleration = p5.Vector.random2D();
     this.zeroVector = this.sketch.createVector(0, 0); // don't modify
 
-    this.radius = 8;
+    this.radius = 7;
     this.maxSpeed = 12;
     this.maxForce = 4;
     this.maxMagnitude = 50;
@@ -28,7 +28,12 @@ export default class Dot {
   show() {
     this.sketch.stroke(255);
     this.sketch.fill(0);
-    this.sketch.ellipse(this.position.x, this.position.y, this.radius, this.radius);
+    this.sketch.ellipse(
+      this.position.x,
+      this.position.y,
+      this.radius,
+      this.radius
+    );
   }
 
   applyAllForces() {

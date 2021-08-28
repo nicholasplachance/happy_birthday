@@ -1,5 +1,5 @@
 body {
-  background: #dcdcdc;
+  background: #E89BB0;
 }
 
 .main {
@@ -20,3 +20,12 @@ body {
     -webkit-transform: scale(1);
   }
 }
+
+@media only screen and ( min-width: 768px ) {
+  .canvas {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 10px;
+  }
+}
+
